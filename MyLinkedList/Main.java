@@ -13,7 +13,7 @@ public class Main {
 
         // list.insertAtFront(8);
 
-        list.insertAt(25, 10);
+        list.insertAt(25, 3);
 
 
         System.out.println(list);
