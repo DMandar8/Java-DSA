@@ -159,6 +159,8 @@ public class MyLinkedList{
         }
         currNode.next = null;
         tail = currNode;
+
+        // we can also implement this without tail as in online problems we might not have a tail....so the second solution is is notebook ....with two indexes
     }
 
     public String toString(){  // similar to array, here also there is a in-built toString class which is responsible to print the linked-list in console window
