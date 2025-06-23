@@ -132,6 +132,35 @@ public class MyLinkedList{
     }
 
 
+    public void deleteStart(){
+        if(isEmpty()) return;
+
+        Node currNode = head;
+
+        head = head.next; // now head is pointing to the second element
+        currNode.next = null;  // and here the first element is now pointing towards null 
+
+        // there is no need of manually deleting the node ....because the java has automatic garbage collector which will automatically identify the node and delete it.
+         
+    }
+
+
+    public void deleteEnd(){
+        if(isEmpty()) return;
+        if(head == tail){
+            head = tail = null;
+            return;
+        }
+
+        Node currNode = head;
+
+        while(currNode.next != tail){
+            currNode = currNode.next;
+        }
+        currNode.next = null;
+        tail = currNode;
+    }
+
     public String toString(){  // similar to array, here also there is a in-built toString class which is responsible to print the linked-list in console window
         Node currNode = head;
 

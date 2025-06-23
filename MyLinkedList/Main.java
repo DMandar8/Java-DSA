@@ -15,7 +15,10 @@ public class Main {
 
         // list.insertAt(25, 3);
 
-        list.reverse();
+        // list.reverse();
+
+        // list.deleteStart();
+        list.deleteEnd();
 
 
         System.out.println(list);
