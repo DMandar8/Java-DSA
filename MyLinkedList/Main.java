@@ -13,7 +13,9 @@ public class Main {
 
         // list.insertAtFront(8);
 
-        list.insertAt(25, 3);
+        // list.insertAt(25, 3);
+
+        list.reverse();
 
 
         System.out.println(list);

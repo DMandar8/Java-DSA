@@ -10,7 +10,7 @@ class Node{
     }
 }
 
-public class MyLinkedList {
+public class MyLinkedList{
     private Node head;
     private Node tail;
 
@@ -108,6 +108,27 @@ public class MyLinkedList {
         
         
 
+    }
+
+    public void reverse(){
+
+        if(head==null || head.next==null){
+            return;
+        }
+        Node prev = null;
+        Node currNode = head;
+        tail = head;
+        Node nextNode = head.next;
+
+        while(nextNode!=null){
+            currNode.next = prev;
+            prev = currNode;
+            currNode = nextNode;
+            nextNode = nextNode.next;
+        }
+        currNode.next = prev;
+
+        head=currNode;
     }
 
 
