@@ -7,8 +7,8 @@ public class Main {
         list.insert(2);
         list.insert(3);
         list.insert(4);
-        list.insert(5);
-        list.insert(6);
+        // list.insert(5);
+        // list.insert(6);
 
 
         // list.insertAtFront(8);
@@ -18,9 +18,18 @@ public class Main {
         // list.reverse();
 
         // list.deleteStart();
-        list.deleteEnd();
+        // list.deleteEnd();
+        // list.removeNthFromEnd(1);
 
 
+
+        // list.printRecursively();
+        list.reverseRecursively();
+        // list.swapPairs();
+
+        
         System.out.println(list);
+
+
     }
 }

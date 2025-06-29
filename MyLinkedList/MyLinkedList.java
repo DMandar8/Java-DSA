@@ -163,6 +163,108 @@ public class MyLinkedList{
         // we can also implement this without tail as in online problems we might not have a tail....so the second solution is is notebook ....with two indexes
     }
 
+
+     public void removeNthFromEnd(int n) {
+        
+        if(head==null) return;
+        if(head.next==null) return;
+
+        int totalNode = 0;
+        Node currNode = head;
+
+        while(currNode!=null){
+            currNode=currNode.next;
+            totalNode++;
+        }
+        int deleteIndex = totalNode - n + 1;
+        int i=0;
+        Node prev = null;
+        currNode = head;
+
+        while(i<(deleteIndex-1)){
+            prev = currNode;
+            currNode = currNode.next;
+            i++;
+        }
+        prev.next = currNode.next;
+        currNode.next = null;
+
+        
+    }
+
+
+    public void printRecursively(Node head){
+        if(head == null) return;
+
+        System.out.print(head.data+"-->");
+
+        // if(head.next!=null){
+        //     System.out.print("-->");
+        // }
+        printRecursively(head.next);
+        // System.out.print(head.data+"-->");  just if you move the statement below the recursive call the linked list will be printed in reverse order...keep in mind the linked list is just printed in reverse order it still the stores the addresses of the actual chronology
+    }
+
+    public void printRecursively(){
+        printRecursively(head);
+    }
+
+
+    public Node reverseRecursively(Node head){
+
+        //here we are actually reversing the linked list
+        if(head==null || head.next==null) return head;
+        
+        Node rest = reverseRecursively(head.next);
+
+
+        Node nextNode = head.next;
+        nextNode.next = head;
+        head.next = null;
+
+        return rest;
+        //here the value of rest will will be the same throughout the complete execution and backtracking....as we are as it returning it and not modifying it again
+
+    }
+
+    public void reverseRecursively(){
+        head=reverseRecursively(head);
+    }
+
+
+    // public void swapPairs(Node head){
+    //     if(head==null || head.next==null) return ;
+
+    //     Node prev = null;
+    //     Node currNode = head;
+    //     Node nextNode = head.next;
+    //     int flag = 0;
+
+    //     while(nextNode!=null){
+    //         currNode.next = nextNode.next;
+    //         nextNode.next = currNode;
+            
+    //         if(flag==0){
+    //             head = nextNode;
+    //             flag = 1;
+    //             prev = nextNode;
+    //         }else{
+    //             prev.next = nextNode;
+    //         }
+    //         prev = nextNode;
+    //         currNode = nextNode.next;
+    //         nextNode = currNode.next;
+    //     }
+
+    // }
+
+    // public void swapPairs(){
+    //     swapPairs(head);
+    // }
+
+    
+
+
     public String toString(){  // similar to array, here also there is a in-built toString class which is responsible to print the linked-list in console window
         Node currNode = head;
 
