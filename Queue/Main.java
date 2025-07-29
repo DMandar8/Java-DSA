@@ -9,6 +9,8 @@ public class Main {
         Queue<Integer> queue = new ArrayDeque<>();
         Stack<Integer> stack = new Stack<>();
 
+        // Operations on Queue..... 
+
         // queue.add(1);
         // queue.offer(4);
         // queue.remove();
