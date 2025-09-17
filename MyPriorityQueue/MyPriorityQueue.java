@@ -1,22 +1,12 @@
-package MyQueue;
-<<<<<<< HEAD
-
 import java.util.Arrays;
 
-public class MyQueue {
-    private int[] items;
-=======
-import java.util.Arrays;
-
-
-public class MyQueue {
+public class MyPriorityQueue {
      private int[] items;
->>>>>>> 79c3dcbb3bc93f2d3f63826ac72d89214a76b5b1
     private int front;
     private int rear;
     private int size;
     private int count;
-    public MyQueue(int capacity){
+    public MyPriorityQueue(int capacity){
         this.items = new int[capacity];
         this.front = -1;
         this.rear = 0;
@@ -34,12 +24,24 @@ public class MyQueue {
     // }
 
     // New enqueue() with fixed bug
+    //This is priorityQueue.....here i just copied complete normal queue from scratch just the diference we have to do is is in the enqueue method, i.e. during storing the elements in queue
     public void enqueue(int value){
         if(count == size){
             System.out.println("Queue is full...!!");
             return;
         }
-        items[rear] = value;
+
+        int i = 0;
+
+        for(i = rear; i > 0; i--){
+            if(items[i-1] <= value){
+                break;
+            }
+            if(items[i-1] > value){
+                items[i] = items[i-1];
+            }
+        }
+        items[i] = value;
         rear = (rear + 1) % size;  //this is our new formula
         count++;
     }
@@ -77,9 +79,4 @@ public class MyQueue {
     public String toString(){
         return Arrays.toString(items);
     }
-
-<<<<<<< HEAD
-    
-=======
->>>>>>> 79c3dcbb3bc93f2d3f63826ac72d89214a76b5b1
 }
