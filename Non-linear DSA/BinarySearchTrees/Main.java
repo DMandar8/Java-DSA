@@ -1,6 +1,7 @@
 
 public class Main {
     public static void main(String args[]){
+
         MyBinarySearchTree tree = new MyBinarySearchTree();
 
         int[] nums = { 7, 8, 1, 3, 2, 5, 10, 4};
@@ -9,6 +10,7 @@ public class Main {
             tree.insert(num);
         }
 
+        System.out.println(tree.find(4));
         // tree.insert(10);
         // tree.insert(7);
         // tree.insert(70);

@@ -8,6 +8,7 @@ class TreeNode {
         this.data = data;
     }
 
+    @Override
     public String toString(){
         return "Value = " + this.data;
     }
@@ -74,6 +75,56 @@ public class MyBinarySearchTree {
         //     }
         // }
 
+    }
+
+
+    // Recurssive solution for finding the node in binary search tree
+
+    // private TreeNode find(TreeNode root, int value){
+
+    //     if(root == null) return null;
+
+    //     if(root.data == value){
+    //         return root;
+    //     }
+
+    //     if(value < root.data){
+    //         // Search int the left subtree
+    //         return find(root.leftChild, value);
+    //     }
+    //     return find(root.rightChild, value);
+
+    // }
+    // End of recurssive approach
+
+
+    // This is the iterative solution for finding a node in the binary search tree
+        private TreeNode find(TreeNode root, int value){
+
+            if(root == null) return null;
+
+            if(root.data == value){
+                return root;
+            }
+
+            while(root.data != value){
+                if(value <= root.data){
+                    root = root.leftChild;
+                }else{
+                    root = root.rightChild;
+                }
+
+                if(root == null) return null;
+            }
+
+            return root;
+        }
+    // End of iterative approach
+
+
+    public TreeNode find(int value){
+        return find(root,value);
+        // System.out.println();
     }
     
 }
