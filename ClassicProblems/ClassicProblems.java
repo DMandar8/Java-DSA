@@ -54,7 +54,7 @@ public class ClassicProblems {
     }
 
     public int recursiveFactorial(int n){
-        if(n == 0){
+        if(n == 0 || n==1){
             return 1;
         }
         int result = recursiveFactorial(n-1) * n;
