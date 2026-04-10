@@ -32,7 +32,8 @@ public class Main {
         // System.out.println(tree.heightOfTree());
         // System.out.println(tree.heightOfNode(7));
         // System.out.println(tree.getMin());
-        System.out.println(tree.isEqual(tree2));
+        // System.out.println(tree.isEqual(tree2));
+        System.out.println(tree.nodesAtKDistance(2));
 
 
 

@@ -1,3 +1,5 @@
+import java.util.LinkedList;
+import java.util.List;
 
 class TreeNode {
     int data;
@@ -245,5 +247,26 @@ public class MyBinarySearchTree {
     public boolean isEqual(MyBinarySearchTree tree){
         return isEqual(this.root, tree.root);
     }
+
+    public void nodesAtKDistance(TreeNode root, int k, List<Integer> result){
+        if(root == null) return;
+        if(k == 0){
+            result.add(root.data);
+            return;
+        }
+
+        nodesAtKDistance(root.leftChild, k-1, result);
+        nodesAtKDistance(root.rightChild, k-1, result);
+    }
+
+
+    public List<Integer> nodesAtKDistance(int k){
+        List<Integer> result = new LinkedList<>();
+        nodesAtKDistance(this.root, k, result);
+        return result;
+    }
+
+
+
     
 }
